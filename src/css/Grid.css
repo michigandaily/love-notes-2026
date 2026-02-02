@@ -20,16 +20,16 @@
 	padding-bottom: 3rem;
 }
 #load-more-button{
-	width: 11rem;
-	height: 4rem;
-	align-self: center;
-	border-radius: 5px;
-	background-color: #f1b6b4;
-	color: white;
-	font-family: 'Courier New', Courier, monospace;
-	font-weight: bold;
-	font-size: medium;
-	padding: 1rem;
+	all: unset;           /* remove all default styles (border, background, font, etc.) */
+	display: inline-flex; /* allows you to align SVG and text if needed */
+	align-items: center;  /* vertically centers content */
+	justify-content: center; /* centers content horizontally */
+	cursor: pointer;      /* still shows pointer on hover */
+	padding: 0;           /* remove any padding */
+}
+
+#load-more-button:hover {
+  transform: scale(1.05);  /* grows 10% on hover */
 }
 
 /* flexible for mobile devices */

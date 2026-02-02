@@ -14,12 +14,8 @@ body {
 }
 
 footer {
-	// position: sticky;
-	bottom: 0;
 	position: relative;
-	display: grid;
-	grid-template-columns: 1.5fr 0.5fr 1.5fr;
-	align-items: stretch;
+	bottom: 0;
 	padding: 20px;
 	background-color: white;
 	font-family:
@@ -31,11 +27,48 @@ footer {
 	width: 100vw;
 }
 
-.footer-mailbox {
-	grid-column: 1 / span 1;
-	display: flex;
-	align-items: center;
-	margin-left: 15px;
+// .footer-mailbox {
+// 	grid-column: 1 / span 1;
+// 	display: flex;
+// 	align-items: center;
+// 	margin-left: 15px;
+// }
+
+.top-row {
+  display: flex;           /* Enables flex layout */
+  justify-content: space-between; /* Pushes items to the far ends */
+  align-items: center;     /* Optional: vertically centers them */
+  width: 100%;             /* Make sure container stretches */
+  padding: 20px;         /* Optional: some horizontal padding */
+}
+
+.bottom-row {
+//   position: relative; /* needed for overlay positioning */
+//   display: inline-block;
+  position: relative;    /* needed for overlay positioning */
+  display: flex;
+  justify-content: center; /* centers content horizontally */
+  align-items: center;     /* centers overlay vertically if needed */
+  width: 100%; 
+//   background: url('/src/assets/footer-items.svg') no-repeat center top;
+//   background-size: cover;
+}
+
+.svg-container img {
+  position: relative;
+  display: block;
+  justify-content: center; 
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfectly centers */
+  color: black;  /* text color */
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: center; 
 }
 
 .footer-square {
@@ -55,17 +88,17 @@ footer {
 }
 
 .footer-content {
-	grid-column: 3 / span 1;
+	// grid-column: 3 / span 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
-.footer-icons {
+.social-icons {
 	padding-top: 20px;
 }
 
-.footer-icons img {
+.social-icons img {
 	width: 30px;
 	height: auto;
 	margin-right: 25px;
@@ -101,6 +134,7 @@ footer {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+	padding: 20px;
 	// min-height: 200vh; /* Ensure at least full screen height */
 	display: flex;
 	justify-content: center;

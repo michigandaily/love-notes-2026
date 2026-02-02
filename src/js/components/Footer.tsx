@@ -1,25 +1,23 @@
 import Facebook from '../../assets/facebook.svg';
 import Twitter from '../../assets/twitter.svg';
 import Instagram from '../../assets/instagram.svg';
-import Mailbox from '../../assets/mailbox.svg';
+// import Mailbox from '../../assets/mailbox.svg';
+import FooterItems from '../../assets/footer-items.svg';
 import '../../css/main.scss';
 
 const Footer = () => {
 	return (
 		<footer className="footer">
-			<div className="footer-mailbox">
-				<img src={Mailbox} alt="Mailbox" />
-				<div className="footer-square">The Michigan Daily Love Edition, 2025</div>
-			</div>
-			<div className="footer-content">
-				<p>
-					<strong>Designed By:</strong> Sanvika Inturi & Ruhee Jain
-				</p>
-				<p>
-					<strong>Developed By:</strong> Emily Chen, Madeleine Hong, Alvin Jiang, Julia Mei, Eshaan
-					Nair, Alexander Salinas and Kristen Su
-				</p>
-				<div className="footer-icons">
+			<div className="top-row">
+				<div className="credits">
+					<p>
+						<strong>Designed By:</strong> Annice Chang, Aalleyah Fysudeen, Sanvika Inturi, Shanshan Ye
+					</p>
+					<p>
+						<strong>Developed By:</strong> 
+					</p>
+				</div>
+				<div className='social-icons'>
 					<a href="https://www.facebook.com/michigandaily" target="_blank" rel="noreferrer">
 						<img src={Facebook} alt="Facebook" />
 					</a>
@@ -30,6 +28,14 @@ const Footer = () => {
 						<img src={Instagram} alt="Instagram" />
 					</a>
 				</div>
+			</div>
+			<div className='bottom-row'>
+				<img src={FooterItems} alt="SVG with two pictures" style={{
+    width: '80%',    // stretch full width
+    height: 'auto',   // keep aspect ratio
+    display: 'block'  // remove default inline spacing
+  }}/>
+  				<span className="overlay-text">The Michigan Daily Love Edition, 2026</span>
 			</div>
 		</footer>
 	);

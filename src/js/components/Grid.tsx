@@ -1,4 +1,5 @@
 import Notecard from './Notecard';
+import Button from '../../assets/button.svg';
 import '../../css/Grid.css';
 import messages from '../../data.json';
 import { useState } from 'react';
@@ -46,7 +47,7 @@ const Grid: React.FC = () => {
 		<div className="grid-container">
 			<div className="grid">{renderNotecards()}</div>
 			<button id="load-more-button" onClick={loadMoreNotes}>
-				Load more love
+				<img src={Button} alt='Load More button'/>
 			</button>
 		</div>
 	);
