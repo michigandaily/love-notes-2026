@@ -1,0 +1,139 @@
+// part of ArticleGallery component
+.letter-with-arrows {
+    display: flex;
+    margin-top: 10%;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2); /* Translucent background */
+  border: none;
+  border-radius: 50%; /* Makes it round */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease; 
+  margin: 0 20px;
+}
+
+.arrow.left {
+    display: flex;
+    align-self: center;
+    align-content: center;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+}
+
+.arrow.right {
+    display: flex;
+    align-self: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+}
+
+
+/* Hover effect */
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Darker on hover */
+}
+
+.placeholder {
+  background-color: rgba(0, 0, 0, 0);
+  cursor: default;
+}
+
+.placeholder:hover {
+    background-color: rgba(0, 0, 0, 0);
+    cursor: default;
+}
+
+// part of the Article component
+.postcard {
+    min-height: 60vh;
+    height: auto;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 15px 15px 2px rgb(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.article-info {
+    align-self: flex-start;
+    padding: 1rem;
+    width: 75%;
+}
+
+.article-info h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    max-width: 80%;
+}
+
+.article-info p {
+    margin: 0;
+    max-width: 80%;
+}
+
+.stamp {
+    align-self: flex-end;
+    position: absolute;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.stamp img {
+    width: 75px;
+}
+
+.photo {
+    text-align: center;
+    align-self: center;
+    bottom: 0;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    max-height: 65%;
+}
+
+.photo img {
+    width: 60%;
+    height: auto;
+    max-width: 95%;
+}
+
+@media screen and (max-width: 768px) {
+    .letter-with-arrows {
+       margin-top: 150px;
+    }
+
+    .postcard{
+        width: 100vw;
+    }
+
+    .article-info {
+        align-self: flex-start;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .stamp{
+        display: none;
+    }
+
+    .photo img{
+        width: 90%;
+        height: auto;
+    }
+}

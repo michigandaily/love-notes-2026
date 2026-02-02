@@ -2,6 +2,162 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	font-family: Lora, serif;
+	// font-family: Lora, serif;
+	font-family:
+		Lucida Sans Typewriter,
+		Lucida Console,
+		monaco,
+		Bitstream Vera Sans Mono,
+		monospace;
 	font-size: 16px;
+	background-color: #fce2c8;
+}
+
+footer {
+	// position: sticky;
+	bottom: 0;
+	position: relative;
+	display: grid;
+	grid-template-columns: 1.5fr 0.5fr 1.5fr;
+	align-items: stretch;
+	padding: 20px;
+	background-color: white;
+	font-family:
+		Lucida Sans Typewriter,
+		Lucida Console,
+		monaco,
+		Bitstream Vera Sans Mono,
+		monospace;
+	width: 100vw;
+}
+
+.footer-mailbox {
+	grid-column: 1 / span 1;
+	display: flex;
+	align-items: center;
+	margin-left: 15px;
+}
+
+.footer-square {
+	/* Changed this to absolute position and the footer div to relative
+		but still need to fix it (this moves weirdly when the viewport
+		is somewhere between mobile/media query width and desktop width. */
+	position: absolute;
+	left: 65px;
+	top: 80px;
+	width: 90px;
+	height: auto;
+	background-color: white;
+	padding: 5px;
+	font-size: 0.75em;
+	text-align: center;
+	box-shadow: 1px 4px 3px 3px rgb(125, 124, 124);
+}
+
+.footer-content {
+	grid-column: 3 / span 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.footer-icons {
+	padding-top: 20px;
+}
+
+.footer-icons img {
+	width: 30px;
+	height: auto;
+	margin-right: 25px;
+}
+
+@media (max-width: 768px) {
+	.footer {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		padding: 10px;
+		margin: auto;
+		font-size: smaller;
+	}
+
+	.footer-mailbox {
+		max-width: 80%;
+		align-items: center;
+		margin-left: 0;
+	}
+
+	.footer-content {
+		margin: 10px;
+	}
+
+	.footer-square {
+		padding: 10px;
+	}
+}
+
+.landing-page-container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	// min-height: 200vh; /* Ensure at least full screen height */
+	display: flex;
+	justify-content: center;
+	// align-items: center;
+	// background-image: url('../assets/background.png');
+	// background-size: 100% auto; /* Scale the width to 100%, height adjusts automatically */
+	// background-position: center;
+	// background-repeat: no-repeat; /* Ensures the image is not repeated */
+	// overflow-y: scroll; /* Allows scrolling if the image height exceeds the screen height */
+}
+#landing-page-image{
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	object-position: top;
+}
+#down-arrow{
+	position: absolute;
+	z-index: 3;
+	width: 4rem;
+	height: auto;
+	bottom: 1rem;	
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black overlay */
+}
+
+.content {
+	position: absolute;
+	top: 20px; /* Distance from the top */
+	left: 20px; /* Distance from the right */
+	z-index: 10;
+	text-align: center;
+	padding: 1.5rem;
+}
+
+.title {
+	font-size: 5rem; /* Fancy and large text */
+	font-family: 'Great Vibes', cursive; /* Apply the fancy font */
+	color: #251b10; /* Brown color for the text */
+	margin: 0; /* Remove default margin */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add a shadow for better visibility */
+}
+
+@media screen and (max-width: 768px) {
+	#landing-page-image{
+		width: 100vw;
+		height: auto;
+		object-fit: contain;
+	}
+	.landing-page-container{
+		height: auto;
+	}
 }
