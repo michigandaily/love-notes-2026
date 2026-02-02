@@ -1,0 +1,26 @@
+.article {
+  font-weight: normal;
+  text-decoration: none;
+  all: unset;
+  cursor: pointer;
+}
+
+.article.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.article-bank-container {
+    color: #7A0000;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1.5px solid #7A0000;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3);
+    // font-family: "SF Compact Rounded";
+}
+
+.article-bank-list {
+    // background-color: #FFFFFF;
+    padding: 10px;
+}

@@ -1,6 +1,6 @@
 import '../../css/article.scss';
 import '../../css/main.scss';
-import logoStamp from '../../assets/logo-stamp.png';
+// import logoStamp from '../../assets/logo-stamp.png';
 // import letterPhoto from '../../assets/letter-photo.png';
 
 const Article = ({
@@ -28,9 +28,9 @@ const Article = ({
 				<p>{author}</p>
 				<p>{date}</p>
 			</div>
-			<div className="stamp">
+			{/* <div className="stamp">
 				<img src={logoStamp} alt="stamp" />
-			</div>
+			</div> */}
 			<div className="photo">
 				<img src={photoUrl} alt={photoAltText} />
 			</div>
