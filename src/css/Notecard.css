@@ -8,6 +8,7 @@
   height: 800px;
   width: 600px;
   aspect-ratio: 650 / 800;
+  position: relative;
 }
 
 .wrapper.front {
@@ -20,6 +21,10 @@
   background-image: url('../assets/love-note-back.svg');
   background-size: cover;
   background-position: center;
+  /* love note not visible on backside */
+  .letter {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -116,7 +121,23 @@
 }
 
 .letter{
-
+  /* positioning text over card */
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-13deg);
+  width: 48%;
+  height: 62%;
+  text-align: left;
+  /* prevent from blocking card clicks */
+  pointer-events: none; 
+  z-index: 4;
+  padding: 1em;
+  border: 0.78px solid #7A0000;
+  background-color: #F0E7D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* WebKit-based browsers (Chrome, Edge, Safari) */
@@ -151,9 +172,11 @@
 }
 
 .wrapper:hover .letter {
-  transform: translateY(-110px);
+  /* maintain love note styling on flip */
+  transform: translate(-50%, -50%) rotate(-13deg);
   transition-delay: 0.5s;
 }
+
 
 .heart {
   position: absolute;

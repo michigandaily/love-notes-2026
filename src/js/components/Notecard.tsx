@@ -13,8 +13,9 @@ const Notecard: React.FC<NotecardProps> = ({ text }) => {
 	// this could even have a function for the direction cards face
 	return (
 		<div
-			className={`wrapper ${flipped ? 'back flipped' : 'front'}`}
-			onClick={toggle}
+			className={`wrapper ${!flipped ? 'back flipped' : 'front'}`}
+			onMouseOver={toggle}
+			onMouseLeave={toggle}
 			aria-pressed={flipped}
 		>
 			{/* <div className={`lid one ${color}`}></div>
