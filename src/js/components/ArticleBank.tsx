@@ -1,9 +1,6 @@
 import '../../css/main.scss';
 import '../../css/article-bank.scss';
 
-// import { useState } from 'react';
-// import Article from './Article';
-
 const ArticleBank = ({ articles, index }: ArticleListProps) => {
 	// articles is a list of JSON
 
@@ -18,7 +15,7 @@ const ArticleBank = ({ articles, index }: ArticleListProps) => {
                         key={articleIndex}
                         className={`article ${articleIndex === index ? 'selected' : ''}`}
                     >
-                        <p>{article.title}</p>
+                        <p className="article-name">{article.title}</p>
                     </a>
 						
                 ))}

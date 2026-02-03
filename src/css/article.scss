@@ -1,17 +1,16 @@
 // part of ArticleGallery component
 .letter-with-arrows {
     display: flex;
-    flex-direction: column; /* stack children vertically */
+    flex-direction: column; 
     margin-top: 10vh;
-    height: 40vh;
-    align-items: center;    /* centers horizontally */
-    justify-content: center;/* centers vertically */
+    height: auto;
+    align-items: center;   
 }
 
 .arrows-and-progress-bar {
     display: flex;
     margin-top: 5%;
-    height: 300px; 
+    height: auto; 
     align-items: center; 
     justify-content: center;
 }
@@ -62,6 +61,7 @@
 .placeholder {
   width: 50px;
   height: 50px;
+  box-shadow: none;
   background-color: rgba(0, 0, 0, 0);
   cursor: default;
 }
@@ -73,11 +73,9 @@
 
 // part of the Article component
 .postcard {
-    // min-height: 60vh;
-    // height: auto;
     width: 35vw;
     aspect-ratio: 1 / 1.1;
-    margin-top: 35vh;
+    margin: 0 2vw;
     padding-top: 5vh;
     display: flex;
     flex-direction: column;
@@ -123,11 +121,11 @@
 
 @media screen and (max-width: 768px) {
     .letter-with-arrows {
-       margin-top: 150px;
+       margin-top: 100px;
     }
 
     .postcard{
-        width: 100vw;
+        width: 90vw;
     }
 
     .article-info {

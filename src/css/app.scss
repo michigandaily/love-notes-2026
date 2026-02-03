@@ -1,29 +1,35 @@
 .header-container {
 	position: relative;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: auto;
 	padding-top: 7vh;
-	// min-height: 200vh; /* Ensure at least full screen height */
 	display: flex;
 	justify-content: center;
-	gap: 7vw;
-	// align-items: center;
-	// background-image: url('../assets/background.png');
-	// background-size: 100% auto; /* Scale the width to 100%, height adjusts automatically */
-	// background-position: center;
-	// background-repeat: no-repeat; /* Ensures the image is not repeated */
-	// overflow-y: scroll; /* Allows scrolling if the image height exceeds the screen height */
+	// gap: 2vw;
 }
 
 .word-search {
   display: flex;
-  flex-direction: column; /* stack vertically */
-  align-items: center;    /* center horizontally */
-  gap: 5vh;              /* space between elements vertically */
+  flex-direction: column; 
+  align-items: center;   
+  gap: 1vh;              
+  margin: 0vh 1.5vh;
 }
 
 .word-search img,
 .word-search .article-bank {
-  width: 100%;    /* both elements take same width */
-  max-width: 700px; /* optional: cap the width */
+  width: 100%;    
+  max-width: 700px; 
+  margin: 0 2vw;
+}
+
+@media (max-width: 768px) {
+	.header-container {
+        flex-direction: column; 
+        align-items: center;   
+        
+    }
+    .word-search {
+        width: 90vw;
+    }
 }
