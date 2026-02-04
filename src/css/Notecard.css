@@ -27,6 +27,18 @@
   }
 }
 
+.wrapper:nth-child(4n+1) {
+  .wrapper.back {
+  background-image: url('../assets/love-note-back-design.svg');
+  }
+}
+
+.wrapper:nth-child(4n+4) {
+  .wrapper.back {
+  background-image: url('../assets/love-note-back-design.svg');
+  }
+}
+
 @media (max-width: 768px) {
   .wrapper {
     height: 70vh;
