@@ -3,6 +3,7 @@ import Twitter from '../../assets/twitter.svg';
 import Instagram from '../../assets/instagram.svg';
 // import Mailbox from '../../assets/mailbox.svg';
 import FooterItems from '../../assets/footer-items.svg';
+import FooterItemsMobile from '../../assets/footer-items-mobile.svg';
 import '../../css/main.scss';
 
 const Footer = () => {
@@ -14,7 +15,7 @@ const Footer = () => {
 						<strong>Designed By:</strong> Annice Chang, Aalleyah Fysudeen, Sanvika Inturi, Shanshan Ye
 					</p>
 					<p>
-						<strong>Developed By:</strong> 
+						<strong>Developed By: Daniel Liu, Grace Liu, Matthew Prock, Siya Vashi</strong> 
 					</p>
 				</div>
 				<div className='social-icons'>
@@ -30,11 +31,8 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className='bottom-row'>
-				<img src={FooterItems} alt="SVG with two pictures" style={{
-    width: '80%',    // stretch full width
-    height: 'auto',   // keep aspect ratio
-    display: 'block'  // remove default inline spacing
-  }}/>
+				<img src={FooterItems} alt="SVG with two pictures" className='footer-svg'/>
+				<img src={FooterItemsMobile} alt="SVG with two pictures" className='footer-svg-mobile'/>
   				<span className="overlay-text">The Michigan Daily Love Edition, 2026</span>
 			</div>
 		</footer>

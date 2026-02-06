@@ -13,14 +13,16 @@
 
 .wrapper.front {
   background-image: url('../assets/love-note-front.svg');
-  background-size: cover;
+  background-size: 80% auto; 
+  background-repeat: no-repeat;
   background-position: center;
   transform: rotate(0deg) rotate(var(--rotb, 0deg));
 }
 
 .wrapper.back {
   background-image: url('../assets/love-note-back.svg');
-  background-size: cover;
+  background-size: 80% auto; 
+  background-repeat: no-repeat;
   background-position: center;
   transform: rotate(0deg) rotate(var(--rotb, 0deg));
 
@@ -58,6 +60,25 @@
     width: 90vw;
   }
 }
+
+@media (max-width: 600px) {
+  
+  .wrapper:nth-child(2n+1){
+    .wrapper.back {
+      background-image: url('../assets/love-note-back-design.svg');
+    }
+  }
+  
+  .wrapper:nth-child(2n) {
+    .wrapper.back {
+      background-image: url('../assets/love-note-back.svg');
+    }
+  }
+  
+}
+
+
+
 
 .lid {
   position: absolute;
@@ -151,11 +172,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-13deg);
-  width: 48%;
-  height: 62%;
+  width: 40%;
+  height: 50%;
   text-align: left;
   pointer-events: none;
-
   /* prevent from blocking card clicks */
   /*pointer-events: none;*/ 
   z-index: 4;
@@ -166,6 +186,14 @@
   justify-content: center;
   align-items: center;
   display: block;
+  overflow-y: hidden;
+}
+
+@media (max-width: 768px) {
+	.letter {
+		width: 40%;
+    height: 40%;
+	}
 }
 
 .wrapper {

@@ -5,10 +5,10 @@
 	margin: 20px;
 	justify-items: center;
 	align-items: center;
-	row-gap: 4rem;
+	row-gap: 1rem;
 	padding: 3rem;
-	padding-top: 10rem;
-	column-gap: 15vw;
+	padding-top: 5rem;
+	column-gap: 13vw;
 }
 
 .grid-container{
@@ -37,6 +37,9 @@
 @media (max-width: 768px) {
 	.grid {
 		grid-template-columns: 1fr; /* One column for mobile */
+		row-gap: 0rem;
+		padding: 0rem;
+		padding-top: 0rem;
 	}
 
 	.grid-container{
