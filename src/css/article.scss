@@ -1,18 +1,20 @@
 // part of ArticleGallery component
 .letter-with-arrows {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     margin-top: 10vh;
-    height: auto;
-    align-items: center;   
+    min-height: 75vh; /* reserve space so arrow advance doesn't shift layout */
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .arrows-and-progress-bar {
     display: flex;
     margin-top: 5%;
-    height: auto; 
-    align-items: center; 
+    min-height: 50px;
+    align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .arrow {
@@ -74,72 +76,106 @@
 // part of the Article component
 .postcard {
     width: 35vw;
-    aspect-ratio: 1 / 1.1;
+    height: calc(35vw * 1.1);
+    min-height: 320px;
     margin: 0 2vw;
-    padding-top: 5vh;
+    padding: 1.25rem;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
-	border-radius: 10px;
-	border: 1.5px solid #7A0000;
-	box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 1.5px solid #7A0000;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    flex-shrink: 0;
 }
 
-.article-info {
-    align-self: flex-start;
-    padding: 1rem 1rem 1rem 2rem;
+/* Use full content area inside postcard padding */
+.postcard .article-info {
+    flex: 0 0 auto;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 0.75rem 0;
     color: #7A0000;
+    min-height: 0;
+    overflow: hidden;
 }
 
-.article-info h2 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    max-width: 80%;
+.postcard .article-info h2 {
+    margin: 0 0 0.25rem 0;
+    max-width: 100%;
+    line-height: 1.3;
 }
 
-.article-info p {
+.postcard .article-info p {
     margin: 0;
-    max-width: 80%;
+    max-width: 100%;
+    font-size: 0.9em;
 }
 
-.photo {
-    text-align: center;
-    align-self: center;
-    bottom: 0;
-    padding-bottom: 1rem;
-    padding-top: 10%;
-    max-height: 65%;
+/* Photo fills remaining postcard content area */
+.postcard .photo {
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.photo img {
-    width: 90%;
+.postcard .photo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
-    max-width: 95%;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
     .letter-with-arrows {
-       margin-top: 100px;
+        margin-top: 80px;
+        /* fixed px height so mobile layout doesn't shift when URL bar or content changes */
+        min-height: 520px;
+        height: auto;
     }
 
-    .postcard{
+    .postcard {
         width: 90vw;
-    }
-
-    .article-info {
-        align-self: flex-start;
+        max-width: 400px;
+        height: 420px;
+        min-height: 420px;
         padding: 1rem;
-        width: 100%;
+        box-sizing: border-box;
     }
 
-    .stamp{
+    .postcard .article-info {
+        padding: 0 0 0.5rem 0;
+        flex: 0 0 auto;
+    }
+
+    .postcard .article-info h2 {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        line-height: 1.25;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .postcard .article-info p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .stamp {
         display: none;
     }
 
-    .photo img{
-        width: 90%;
-        height: auto;
-    }
 }

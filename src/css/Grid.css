@@ -1,6 +1,6 @@
 .grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr); /* Default 2 cols */
+	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
 	margin: 20px;
 	justify-items: center;
@@ -11,7 +11,7 @@
 	column-gap: 13vw;
 }
 
-.grid-container{
+.grid-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -19,31 +19,32 @@
 	width: 100%;
 	padding-bottom: 3rem;
 }
-#load-more-button{
-	all: unset;           /* remove all default styles (border, background, font, etc.) */
-	display: inline-flex; /* allows you to align SVG and text if needed */
-	align-items: center;  /* vertically centers content */
-	justify-content: center; /* centers content horizontally */
-	cursor: pointer;      /* still shows pointer on hover */
-	padding: 0;           /* remove any padding */
+
+#load-more-button {
+	all: unset;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding: 0;
 }
 
 #load-more-button:hover {
-  transform: scale(1.05);  /* grows 10% on hover */
+	transform: scale(1.05);
 }
 
-/* flexible for mobile devices */
-/* Changed media query width here to be 768px */
 @media (max-width: 768px) {
 	.grid {
-		grid-template-columns: 1fr; /* One column for mobile */
-		row-gap: 0rem;
-		padding: 0rem;
-		padding-top: 0rem;
+		grid-template-columns: 1fr;
+		row-gap: 2.5rem;
+		column-gap: 0;
+		margin: 0 1rem;
+		padding: 1.5rem 0 2rem;
+		justify-items: center;
 	}
 
-	.grid-container{
-		align-self: center;
-		padding: none;
+	.grid-container {
+		padding: 0 0 2rem;
+		width: 100%;
 	}
 }

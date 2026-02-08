@@ -25,7 +25,7 @@ export default defineConfig({
 	deployment: {
 		region: 'us-east-2',
 		bucket: 'specials.michigandaily.com',
-		key: '2025/love-notes',
+		key: '2026/love-notes',
 		build: './dist',
 		profile: 'sink'
 	}

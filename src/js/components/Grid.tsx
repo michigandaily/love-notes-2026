@@ -32,7 +32,7 @@ const Grid: React.FC = () => {
 			const color = colors[index % colors.length]; // Alternate colors
 
 			return (
-				<div key={key} className="wrapper">
+				<div key={key} className="grid-item">
 					<Notecard text={message} color={color} />
 				</div>
 			);

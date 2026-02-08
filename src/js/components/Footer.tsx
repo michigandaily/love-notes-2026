@@ -15,7 +15,7 @@ const Footer = () => {
 						<strong>Designed By:</strong> Annice Chang, Aalleyah Fysudeen, Sanvika Inturi, Shanshan Ye
 					</p>
 					<p>
-						<strong>Developed By: Daniel Liu, Grace Liu, Matthew Prock, Siya Vashi</strong> 
+						<strong>Developed By: Grace Liu, Matthew Prock, Siya Vashi, and Daniel Liu</strong> 
 					</p>
 				</div>
 				<div className='social-icons'>
