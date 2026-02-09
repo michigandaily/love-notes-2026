@@ -4,162 +4,133 @@
   box-sizing: border-box;
 }
 
-.wrapper {
-  height: 200px;
-  width: 300px;
+/* 3D flip scene */
+.notecard {
+  height: 800px;
+  width: 600px;
+  aspect-ratio: 650 / 800;
   position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 0;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  perspective: 1200px;
 }
 
-.lid {
-  position: absolute;
-  height: 100%;
+/* Card with tilt; flip via rotateY */
+.notecard-card {
+  position: relative;
   width: 100%;
-  top: 0;
-  left: 0;
-  border-right: 150px solid transparent;
-  border-bottom: 100px solid transparent;
-  border-left: 150px solid transparent;
-  transform-origin: top;
-  transition: transform 0.25s linear;
-}
-
-.lid.one {
-  transform: rotateX(0deg);
-  z-index: 3;
-  transition-delay: 0.75s;
-}
-
-.lid.two {
-  transform: rotateX(90deg);
-  z-index: 1;
-  transition-delay: 0.5s;
-}
-
-.envelope {
-  position: absolute;
   height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  border-top: 100px solid transparent;
-  border-right: 150px solid;
-  border-bottom: 100px solid;
-  border-left: 150px solid;
-  z-index: 3;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+  transform: rotate(var(--rotb, 0deg)) rotateY(0deg);
 }
 
-/* BLUE THEME */
-.wrapper.blue{
-  background-color: #3760c9;
-}
-.wrapper.blue .lid.one {
-  border-top: 100px solid #658ced;
-}
-.wrapper.blue .lid.two {
-  border-top: 100px solid #3760c9;
-}
-.wrapper.blue .envelope {
-  border-right-color: #a4d4f2;
-  border-bottom-color: #c4dff0;
-  border-left-color: #a4d4f2;
+.notecard-card.flipped {
+  transform: rotate(var(--rotb, 0deg)) rotateY(180deg);
 }
 
-/* PINK THEME */
-.wrapper.pink{
-  background-color: #ff85a2;
+/* Alternate tilt for certain grid positions */
+.grid-item:nth-child(4n+1) .notecard-card {
+  transform: rotate(var(--rota, 0deg)) rotateY(0deg);
 }
-.wrapper.pink .lid.one {
-  border-top: 100px solid pink;
+.grid-item:nth-child(4n+1) .notecard-card.flipped {
+  transform: rotate(var(--rota, 0deg)) rotateY(180deg);
 }
-.wrapper.pink .lid.two {
-  border-top: 100px solid #ff85a2;
+.grid-item:nth-child(4n+4) .notecard-card {
+  transform: rotate(var(--rota, 0deg)) rotateY(0deg);
 }
-.wrapper.pink .envelope {
-  border-right-color: #ffb6c1;
-  border-bottom-color: #ffc0cb;
-  border-left-color: #ffb6c1;
+.grid-item:nth-child(4n+4) .notecard-card.flipped {
+  transform: rotate(var(--rota, 0deg)) rotateY(180deg);
 }
 
-/* YELLOW THEME */
-.wrapper.yellow{
-  background-color: #ffeb99;
-}
-.wrapper.yellow .lid.one {
-  border-top: 100px solid lightyellow;
-}
-.wrapper.yellow .lid.two {
-  border-top: 100px solid #ffeb99;
-}
-.wrapper.yellow .envelope {
-  border-right-color: #fffacd;
-  border-bottom-color: #ffefc1;
-  border-left-color: #fffacd;
+/* Card faces */
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background-size: 80% auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
+.card-face.front {
+  background-image: url('../assets/love-note-front.svg');
+  transform: rotateY(0deg);
+}
+
+.card-face.back {
+  background-image: url('../assets/love-note-back.svg');
+  transform: rotateY(180deg);
+}
+
+.grid-item:nth-child(4n+1) .card-face.back,
+.grid-item:nth-child(4n+4) .card-face.back {
+  background-image: url('../assets/love-note-back-design.svg');
+}
+
+/* Letter / note text */
 .letter {
   position: absolute;
-  top: 0;
-  width: 80%;
-  height: 90%;
-  background-color: white;
-  overflow-y: scroll;
-  scrollbar-width: thin; /* Firefox: makes scrollbar thinner */
-  scrollbar-color: gray lightgray;
-
-  border-radius: 10px;
-  z-index: 2;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  word-wrap: break-word;
-  white-space: normal;
-  padding: 1rem;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* WebKit-based browsers (Chrome, Edge, Safari) */
-.letter::-webkit-scrollbar {
-  width: 8px; /* Adjust width */
-}
-
-.letter::-webkit-scrollbar-track {
-  background: lightgray; /* Background of scrollbar */
-}
-
-.letter::-webkit-scrollbar-thumb {
-  background: gray; /* Color of the scrollbar */
-  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-13deg);
+  width: 40%;
+  height: 50%;
+  text-align: left;
+  z-index: 4;
+  padding: 1em;
+  border: 0.78px solid #7A0000;
+  background-color: #F0E7D0;
+  display: block;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .letter p {
   font-size: 1rem;
-  /* margin-top: 3px; */
   color: #3b4049;
   padding-bottom: 20px;
 }
 
-.wrapper:hover .lid.one {
-  transform: rotateX(90deg);
-  transition-delay: 0s;
+.letter::-webkit-scrollbar { width: 8px; }
+.letter::-webkit-scrollbar-track { background: lightgray; }
+.letter::-webkit-scrollbar-thumb { background: gray; border-radius: 4px; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .notecard {
+    height: 58vh;
+    max-height: 420px;
+    width: 85vw;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  /* No tilt on mobile */
+  .notecard-card,
+  .grid-item:nth-child(4n+1) .notecard-card,
+  .grid-item:nth-child(4n+4) .notecard-card {
+    transform: rotateY(0deg);
+  }
+  .notecard-card.flipped,
+  .grid-item:nth-child(4n+1) .notecard-card.flipped,
+  .grid-item:nth-child(4n+4) .notecard-card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .letter {
+    width: 38%;
+    height: 42%;
+    padding: 0.5em;
+    font-size: 0.85rem;
+  }
 }
 
-.wrapper:hover .lid.two {
-  transform: rotateX(180deg);
-  transition-delay: 0.25s;
-}
-
-.wrapper:hover .letter {
-  transform: translateY(-110px);
-  transition-delay: 0.5s;
-}
-
-.heart {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
+@media (max-width: 600px) {
+  .grid-item:nth-child(2n+1) .card-face.back {
+    background-image: url('../assets/love-note-back-design.svg');
+  }
+  .grid-item:nth-child(2n) .card-face.back {
+    background-image: url('../assets/love-note-back.svg');
+  }
 }
