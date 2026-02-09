@@ -12,13 +12,14 @@ const Footer = () => {
 			<div className="top-row">
 				<div className="credits">
 					<p>
-						<strong>Designed By:</strong> Annice Chang, Aalleyah Fysudeen, Sanvika Inturi, Shanshan Ye
+						<strong>Designed By:</strong> Annice Chang, Aalleyah Fysudeen, Sanvika Inturi, Shanshan
+						Ye
 					</p>
 					<p>
-						<strong>Developed By: Grace Liu, Matthew Prock, Siya Vashi, and Daniel Liu</strong> 
+						<strong>Developed By:</strong> Grace Liu, Matthew Prock, Siya Vashi, and Daniel Liu
 					</p>
 				</div>
-				<div className='social-icons'>
+				<div className="social-icons">
 					<a href="https://www.facebook.com/michigandaily" target="_blank" rel="noreferrer">
 						<img src={Facebook} alt="Facebook" />
 					</a>
@@ -30,10 +31,10 @@ const Footer = () => {
 					</a>
 				</div>
 			</div>
-			<div className='bottom-row'>
-				<img src={FooterItems} alt="SVG with two pictures" className='footer-svg'/>
-				<img src={FooterItemsMobile} alt="SVG with two pictures" className='footer-svg-mobile'/>
-  				<span className="overlay-text">The Michigan Daily Love Edition, 2026</span>
+			<div className="bottom-row">
+				<img src={FooterItems} alt="SVG with two pictures" className="footer-svg" />
+				<img src={FooterItemsMobile} alt="SVG with two pictures" className="footer-svg-mobile" />
+				<span className="overlay-text">The Michigan Daily Love Edition, 2026</span>
 			</div>
 		</footer>
 	);
