@@ -4,18 +4,23 @@ const LANDING_IMAGE = 'https://www.michigandaily.com/wp-content/uploads/2026/02/
 
 const LandingPage = () => {
 	return (
-		<div
-			className="landing-page-container"
-			style={{ backgroundImage: `url(${LANDING_IMAGE})` }}
-			role="img"
-			aria-label="2026 Statement Love Edition Cover: Scrabble, cards, chess pieces, and dice"
-		>
-			<img
-				src="https://www.michigandaily.com/wp-content/uploads/2025/02/chevron_wrapper.png"
-				alt=""
-				id="down-arrow"
-			/>
-		</div>
+		<section className="landing-hero">
+			<div className="landing-page-container">
+				<img
+					src={LANDING_IMAGE}
+					alt="2026 Statement Love Edition Cover: Scrabble, cards, chess pieces, and dice"
+					className="landing-image"
+				/>
+			</div>
+			<a href="#word-search" className="down-arrow-wrapper">
+				<img
+					src="https://www.michigandaily.com/wp-content/uploads/2025/02/chevron_wrapper.png"
+					alt="Downwards white arrow"
+					id="down-arrow"
+				/>
+				<span className="down-arrow-text">READ MORE</span>
+			</a>
+		</section>
 	);
 };
 

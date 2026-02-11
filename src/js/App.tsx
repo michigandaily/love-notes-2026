@@ -61,8 +61,8 @@ const App = () => {
 
 	return (
 		<div className="header-container">
-			<div className='word-search'>
-				<img src={WordSearch} alt='Michiga Daily word search'/>
+			<div className='word-search' id="word-search">
+				<img src={WordSearch} alt='Michigan Daily word search'/>
 				<div className='article-bank'>
 					<ArticleBank articles={articles} index={index} />
 				</div>
