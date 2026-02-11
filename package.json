@@ -13,6 +13,7 @@
 	},
 	"dependencies": {
 		"18": "^0.0.0",
+		"boto3": "^0.0.1",
 		"jquery": "^3.7.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
@@ -34,7 +35,7 @@
 		"eslint-plugin-react-refresh": "^0.4.5",
 		"prettier": "^3.2.5",
 		"sass": "^1.71.1",
-		"sink": "michigandaily/sink#v3.0.0",
+		"sink": "github:michigandaily/sink#v3.1.0",
 		"typescript": "^5.3.3",
 		"vite": "^5.1.7"
 	},

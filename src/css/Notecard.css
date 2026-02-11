@@ -124,6 +124,8 @@
     height: 42%;
     padding: 0.5em;
     font-size: 0.85rem;
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto;
   }
 }
 
