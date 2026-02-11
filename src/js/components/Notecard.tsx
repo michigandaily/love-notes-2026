@@ -16,8 +16,12 @@ const Notecard: React.FC<NotecardProps> = ({ text }) => {
 		<div
 			className="notecard"
 			onClick={toggle}
-			onPointerEnter={(e) => { if (e.pointerType === 'mouse') setFlipped(true); }}
-			onPointerLeave={(e) => { if (e.pointerType === 'mouse') setFlipped(false); }}
+			onPointerEnter={(e) => {
+				if (e.pointerType === 'mouse') setFlipped(true);
+			}}
+			onPointerLeave={(e) => {
+				if (e.pointerType === 'mouse') setFlipped(false);
+			}}
 			role="button"
 			tabIndex={0}
 			onKeyDown={(e) => {
@@ -27,15 +31,19 @@ const Notecard: React.FC<NotecardProps> = ({ text }) => {
 				}
 			}}
 			aria-pressed={flipped}
-			style={{
-				'--rota': rotationA.current,
-				'--rotb': rotationB.current
-			} as React.CSSProperties}
+			style={
+				{
+					'--rota': rotationA.current,
+					'--rotb': rotationB.current
+				} as React.CSSProperties
+			}
 		>
 			<div className={`notecard-card ${flipped ? 'flipped' : ''}`}>
 				<div className="card-face front">
-					<div className="letter">
-						<p>{text}</p>
+					<div className="scroll-wrapper">
+						<div className="letter">
+							<p>{text}</p>
+						</div>
 					</div>
 				</div>
 				<div className="card-face back" aria-hidden="true" />

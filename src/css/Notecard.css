@@ -97,6 +97,10 @@
 .letter::-webkit-scrollbar-track { background: lightgray; }
 .letter::-webkit-scrollbar-thumb { background: gray; border-radius: 4px; }
 
+.scroll-wrapper {
+  display: block;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .notecard {
@@ -117,6 +121,14 @@
   .grid-item:nth-child(4n+1) .notecard-card.flipped,
   .grid-item:nth-child(4n+4) .notecard-card.flipped {
     transform: rotateY(0deg);
+  }
+
+  .scroll-wrapper {
+    display: block;
+    transform: none !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
   }
 
   .letter {
