@@ -14,7 +14,7 @@ export default defineConfig({
 		nunjucks({
 			hed: 'The Statement Love Edition 2026',
 			dek: 'The Statement Magazine presents: Love Edition 2026',
-			social_img: 'https://www.michigandaily.com/wp-content/uploads/2025/02/love-edition-cover-page-scaled.jpg',
+			social_img: 'https://www.michigandaily.com/wp-content/uploads/2026/02/IMG_6697-scaled.png',
 			google_analytics: '',
 			url: 'https://specials.michigandaily.com/2026/love-notes'
 		})

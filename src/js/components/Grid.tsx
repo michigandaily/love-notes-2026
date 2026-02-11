@@ -5,11 +5,11 @@ import messages from '../../data.json';
 import { useMemo, useState } from 'react';
 
 interface Message {
-	Timestamp: string;
-	'Your email': string;
-	'Sender Name (If you want to be anonymous, leave this blank!)': string;
-	'Receiver Name': string;
-	'Receiver Email': string;
+	// Timestamp: string;
+	// 'Your email': string;
+	// 'Sender Name (If you want to be anonymous, leave this blank!)': string;
+	// 'Receiver Name': string;
+	// 'Receiver Email': string;
 	Message: string;
 }
 
