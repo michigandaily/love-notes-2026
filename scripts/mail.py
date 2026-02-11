@@ -31,7 +31,7 @@ def main():
         AWS_REGION = "us-east-2"
         CHARSET = "UTF-8"
 
-        session = boto3.Session(profile_name='sink')
+        session = boto3.Session(profile_name='ses')
         client = session.client("ses", region_name=AWS_REGION)
 
         # first_names = {}
@@ -96,33 +96,30 @@ def main():
             """
 
             try:
-                print((
-                    BODY_HTML
-                ))
-                # response = client.send_email(
-                #     Destination={
-                #         "ToAddresses": [
-                #             recipient
-                #         ],
-                #     },
-                #     Message={
-                #         "Body": {
-                #             "Html": {
-                #                 "Charset": CHARSET,
-                #                 "Data": BODY_HTML,
-                #             },
-                #             "Text": {
-                #                 "Charset": CHARSET,
-                #                 "Data": BODY_TEXT,
-                #             },
-                #         },
-                #         "Subject": {
-                #             "Charset": CHARSET,
-                #             "Data": f"{SUBJECT}",
-                #         },
-                #     },
-                #     Source=SENDER,
-                # )
+                response = client.send_email(
+                    Destination={
+                        "ToAddresses": [
+                            recipient
+                        ],
+                    },
+                    Message={
+                        "Body": {
+                            "Html": {
+                                "Charset": CHARSET,
+                                "Data": BODY_HTML,
+                            },
+                            "Text": {
+                                "Charset": CHARSET,
+                                "Data": BODY_TEXT,
+                            },
+                        },
+                        "Subject": {
+                            "Charset": CHARSET,
+                            "Data": f"{SUBJECT}",
+                        },
+                    },
+                    Source=SENDER,
+                )
             # Display an error if something goes wrong.
             except ClientError as e:
                 print(e.response["Error"]["Message"])
