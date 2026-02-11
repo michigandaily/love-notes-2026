@@ -1,59 +1,53 @@
 import Notecard from './Notecard';
 import Button from '../../assets/button.svg';
 import '../../css/Grid.css';
-import messages from '../../data.json';
-import { useMemo, useState } from 'react';
+import messages from '../../data-1.json';
+import { useState } from 'react';
 
-interface Message {
-	Timestamp: string;
-	'Your email': string;
-	'Sender Name (If you want to be anonymous, leave this blank!)': string;
-	'Receiver Name': string;
-	'Receiver Email': string;
-	Message: string;
+interface Messages {
+	[key: string]: string;
 }
 
 const Grid: React.FC = () => {
 	// const messages = ['Hey', 'Wassup', 'Hello', 'Happy birthday Jeff! Have a good birthday! This is a really long example message because i want to check if scrolling works']; // Example messages
 
+	// const colors = ['blue', 'pink', 'yellow']; // Choose colors you want idk
+
 	// Explicitly assert that 'messages' is of type Messages
-	const typedMessages: Message[] = messages;
+	const typedMessages = messages as Messages;
+	const keyArr = Object.keys(typedMessages);
 
 	// Shuffle messages using the Fisher-Yates algorithm
-	const shuffledMessages = useMemo(() => {
-		const copy = [...typedMessages];
-
-		for (let i = copy.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[copy[i], copy[j]] = [copy[j], copy[i]];
-		}
-
-		return copy;
-	}, [typedMessages]);
+	for (let i = keyArr.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[keyArr[i], keyArr[j]] = [keyArr[j], keyArr[i]];
+	}
 
 	const [visibleNotes, setVisibleNotes] = useState(10);
 
 	// Function to render only the visible notecards
 	const renderNotecards = () => {
-		return shuffledMessages.slice(0, visibleNotes).map((message, index) => {
+		return keyArr.slice(0, visibleNotes).map((key) => {
+			const message = typedMessages[key];
+			// const color = colors[index % colors.length]; // Alternate colors
 
 			return (
-				<div key={index} className="grid-item">
-					<Notecard text={message.Message}/>
+				<div key={key} className="grid-item">
+					<Notecard text={message} />
 				</div>
 			);
 		});
 	};
 
 	const loadMoreNotes = () => {
-		setVisibleNotes((prev) => Math.min(prev + 10, shuffledMessages.length));
+		setVisibleNotes((prev) => Math.min(prev + 10, keyArr.length));
 	};
 
 	return (
 		<div className="grid-container">
 			<div className="grid">{renderNotecards()}</div>
 			<button id="load-more-button" onClick={loadMoreNotes}>
-				<img src={Button} alt='Load More button'/>
+				<img src={Button} alt="Load More button" />
 			</button>
 		</div>
 	);

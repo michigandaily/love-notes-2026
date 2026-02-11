@@ -27,7 +27,7 @@ def main():
         NAME = "The Michigan Daily Cupids"
         SENDER = f"{NAME} <noreply@michigandaily.com>"
         SUBJECT = "You've been struck by a Michigan Daily Cupid"
-        BASE_URL = "https://specials.michigandaily.com/2025/love-notes"
+        BASE_URL = "https://specials.michigandaily.com/2026/love-notes"
         AWS_REGION = "us-east-2"
         CHARSET = "UTF-8"
 
