@@ -1,5 +1,5 @@
 import '../../css/Notecard.css';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 
 interface NotecardProps {
 	text: string;
@@ -9,13 +9,26 @@ const Notecard: React.FC<NotecardProps> = ({ text }) => {
 	const [flipped, setFlipped] = useState(false);
 	const rotationA = useRef(`${Math.random() * 10 - 5}deg`);
 	const rotationB = useRef(`${Math.random() * 10 - 5}deg`);
+	const didScroll = useRef(false);
 
-	const toggle = () => setFlipped((f) => !f);
+	const onLetterTouchStart = useCallback(() => {
+		didScroll.current = false;
+	}, []);
+	const onLetterTouchMove = useCallback(() => {
+		didScroll.current = true;
+	}, []);
+	const onLetterClick = useCallback((e: React.MouseEvent) => {
+		e.stopPropagation(); // always stop — letter never flips
+		if (!didScroll.current) {
+			// tap (not scroll) → flip manually
+			setFlipped((f) => !f);
+		}
+	}, []);
 
 	return (
 		<div
 			className="notecard"
-			onClick={toggle}
+			onClick={() => setFlipped((f) => !f)}
 			onPointerEnter={(e) => {
 				if (e.pointerType === 'mouse') setFlipped(true);
 			}}
@@ -27,7 +40,7 @@ const Notecard: React.FC<NotecardProps> = ({ text }) => {
 			onKeyDown={(e) => {
 				if (e.key === 'Enter' || e.key === ' ') {
 					e.preventDefault();
-					toggle();
+					setFlipped((f) => !f);
 				}
 			}}
 			aria-pressed={flipped}
@@ -39,14 +52,16 @@ const Notecard: React.FC<NotecardProps> = ({ text }) => {
 			}
 		>
 			<div className={`notecard-card ${flipped ? 'flipped' : ''}`}>
-				<div className="card-face front">
-					<div className="scroll-wrapper">
-						<div className="letter">
-							<p>{text}</p>
-						</div>
-					</div>
-				</div>
+				<div className="card-face front" />
 				<div className="card-face back" aria-hidden="true" />
+			</div>
+			<div
+				className="letter"
+				onTouchStart={onLetterTouchStart}
+				onTouchMove={onLetterTouchMove}
+				onClick={onLetterClick}
+			>
+				<p>{text}</p>
 			</div>
 		</div>
 	);
