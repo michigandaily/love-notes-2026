@@ -21,9 +21,8 @@ const ArticleGallery = ({ articles, index, setIndex }: ArticleListProps) => {
 				<div className="arrows-and-progress-bar">
 					{/* left arrow button */}
 					<button 
-						onClick={() => setIndex(index - 1)} 
+						onClick={() => setIndex((index - 1 + progressBars.length) % progressBars.length)}
 						className="arrow left"
-						disabled={index === 0}
 					>
 						<img src={LeftArrow} alt='Left arrow button' />
 					</button>
@@ -32,9 +31,8 @@ const ArticleGallery = ({ articles, index, setIndex }: ArticleListProps) => {
 
 					{/* right arrow button */}
 					<button 
-						onClick={() => setIndex(index + 1)} 
+						onClick={() => setIndex((index + 1) % progressBars.length)} 
 						className="arrow right"
-						disabled={index === articles.length - 1}
 					>
 						<img src={RightArrow} alt='Right arrow button' />
 					</button>

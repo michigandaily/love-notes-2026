@@ -7,50 +7,50 @@ import { useState } from 'react';
 
 const articles = [
 	{
-		title: 'My vain fascination with ChatGPT',
-		author: 'Statement Correspondent Madison Hammond',
-		date: '02/11/2025',
-		articleUrl: 'https://www.michigandaily.com/statement/my-vain-fascination-with-chatgpt/',
+		title: 'Love, redefined by college students',
+		author: 'Sarayu Bongale',
+		date: '02/10/2026',
+		articleUrl: 'https://www.michigandaily.com/statement/love-redefined-by-college-students/',
 		photoUrl:
-			'https://www.michigandaily.com/wp-content/uploads/2025/02/Web-Design-Artwork-83-1.png',
+			'https://www.michigandaily.com/wp-content/uploads/2026/02/love-ed-web-lede.png',
 		photoAltText:
-			'Digital illustration of a pink robot smiling, with a heart border around the frame'
+			'An illustration of a section of a board game with a game piece sitting behind a booth on the side of the game path. Written on the booth is the phrase "What is love?".'
 	},
 	{
-		title: 'What is love: Love defined through the eyes of elementary school students',
-		author: 'Statement Contributor Lola Post',
-		date: '02/12/2025',
+		title: 'Dear Michelle: A college love advice column',
+		author: 'Michelle Liao',
+		date: '02/10/2026',
 		articleUrl:
-			'https://www.michigandaily.com/statement/what-is-love-love-defined-through-the-eyes-of-elementary-school-students/',
-		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2025/02/Web-Design-Artwork-87.png',
+			'https://www.michigandaily.com/statement/dear-michelle-a-college-love-advice-column/',
+		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2026/02/love-ed-web-love-advice-column.png',
 		photoAltText:
-			'Digital illustration of a female child coloring a heart on the ground, with love-themed drawings around her'
+			'An illustration of a set of stationary including letter paper, a feather pen, and envelopes. There is also a newspaper and a puzzle with the final piece sitting aside of the puzzle.'
 	},
 	{
-		title: 'Ode to the sapphic love song',
-		author: 'Statement Correspondent Amanda Venclovaite-Pirani',
-		date: '02/13/2025',
-		articleUrl: 'https://www.michigandaily.com/statement/ode-to-the-sapphic-love-song/',
-		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2025/02/Web-Design-Artwork-84.png',
-		photoAltText: 'Digital illustration of two cassette tapes with two tulips'
+		title: 'Band of Brothers',
+		author: 'Gabe Efros',
+		date: '02/10/2026',
+		articleUrl: 'https://www.michigandaily.com/statement/band-of-brothers/',
+		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2026/02/love-ed-web-fleeting-love-2.png',
+		photoAltText: 'An illustration of three boys watching a sunset with “GAME OVER” and “Restart?” written overhead.'
 	},
 	{
-		title: 'Just friends: Are boys and girls ever purely platonic?',
-		author: 'Statement Correspondent Liska Torok',
-		date: '02/14/2025',
+		title: 'We\'ll believe in anything',
+		author: 'Brenna Wendell',
+		date: '02/10/2026',
 		articleUrl:
-			'https://www.michigandaily.com/statement/just-friends-are-boys-and-girls-ever-purely-platonic/',
-		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2025/02/Web-Design-Artwork-85.png',
-		photoAltText: 'Digital illustration of two hands grazing each other against a pink background'
+			'https://www.michigandaily.com/statement/well-believe-in-anything/',
+		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2026/02/love-ed-web-heated-rivalry.png',
+		photoAltText: 'An illustration of an air hockey table with a heart-shaped puck and a TV showing two hockey sticks clashing against another heart-shaped puck.'
 	},
 	{
-		title: 'Him & I (Me & Her)',
-		author: 'Statement Columnist Allana Smith',
-		date: '02/14/2025',
-		articleUrl: 'https://www.michigandaily.com/statement/him-i-me-her/',
-		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2025/02/Web-Design-Artwork-86.png',
+		title: 'It\'s no secret that I love love — I mean, who doesn\'t? ',
+		author: 'Filip Vignjevik',
+		date: '02/10/2026',
+		articleUrl: 'https://www.michigandaily.com/statement/its-no-secret-that-i-love-love-i-mean-who-doesnt/',
+		photoUrl: 'https://www.michigandaily.com/wp-content/uploads/2026/02/love-ed-web-loving-to-love.png',
 		photoAltText:
-			"Digital illustration of two girls' eyes, looking at each other against a pink background"
+			"An illustration of a 'spin-the-bottle' setup with the bottle sitting on a heart-shaped mat."
 	}
 ];
 

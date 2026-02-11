@@ -27,32 +27,32 @@ def get_recipients(recipients: str):
 def main():
     rows = list()
     notes = list()
-    with open("data/raw.csv") as f:
+    with open("data/raww.csv", encoding="utf-8") as f:
         reader = DictReader(f)
         i = 0
         for row in reader:
-            recipients = get_recipients(row["recipient"])
-            note = row["note"].strip()
+            recipients = get_recipients(row["Receiver Email"])
+            note = row["Message"].strip()
             for recipient in recipients:
                 rows.append(
                     {
                         "note": note,
                         "recipient": get_email(recipient),
-                        "sender": row["email"].strip().lower(),
+                        "sender": row["Your email"].strip().lower(),
                         "index": i,
                     }
                 )
             notes.append(note)
             i += 1
 
-    with open("data/clean.csv", "w") as f:
+    with open("data/clean-1.csv", "w", encoding="utf-8") as f:
         fieldnames = ["index", "note", "recipient", "sender"]
         writer = DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
 
-    with open("src/data.json", "w") as f:
+    with open("src/data-1.json", "w") as f:
         obj = {i: notes[i] for i in range(len(notes))}
         dump(obj, f, indent=2)
 

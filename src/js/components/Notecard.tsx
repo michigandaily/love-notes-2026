@@ -6,7 +6,7 @@ interface NotecardProps {
 }
 
 const Notecard: React.FC<NotecardProps> = ({ text }) => {
-	const [flipped, setFlipped] = useState(true);
+	const [flipped, setFlipped] = useState(false);
 	const rotationA = useRef(`${Math.random() * 10 - 5}deg`);
 	const rotationB = useRef(`${Math.random() * 10 - 5}deg`);
 
@@ -16,6 +16,8 @@ const Notecard: React.FC<NotecardProps> = ({ text }) => {
 		<div
 			className="notecard"
 			onClick={toggle}
+			onPointerEnter={(e) => { if (e.pointerType === 'mouse') setFlipped(true); }}
+			onPointerLeave={(e) => { if (e.pointerType === 'mouse') setFlipped(false); }}
 			role="button"
 			tabIndex={0}
 			onKeyDown={(e) => {
