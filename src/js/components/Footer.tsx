@@ -12,11 +12,10 @@ const Footer = () => {
 			<div className="top-row">
 				<div className="credits">
 					<p>
-						<strong>Designed By:</strong> Annice Chang, Aalleyah Fysudeen, Sanvika Inturi, Shanshan
-						Ye
+						<strong>Designed By:</strong> Annice Chang, Aalleyah Fysudeen, Sanvika Inturi, and Shanshan Ye
 					</p>
 					<p>
-						<strong>Developed By:</strong> Grace Liu, Matthew Prock, Siya Vashi,and Daniel Liu
+						<strong>Developed By:</strong> Grace Liu, Matthew Prock, Siya Vashi, Daniel Liu, and Julia Mei
 					</p>
 				</div>
 				<div className="social-icons">
