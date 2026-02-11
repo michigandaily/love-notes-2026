@@ -4,8 +4,8 @@ const LandingPage = () => {
 	return (
 		<div className="landing-page-container">
 			<img
-				src="https://www.michigandaily.com/wp-content/uploads/2025/02/love-edition-cover-page-scaled.jpg"
-				alt="Statement Love Edition Cover: Flowers, chocolates, and love letters"
+				src="https://www.michigandaily.com/wp-content/uploads/2026/02/IMG_6697-scaled.png"
+				alt="2026 Statement Love Edition Cover: Scrabble, cards, chess pieces, and dice"
 				id="landing-page-image"
 			></img>
 			<img
