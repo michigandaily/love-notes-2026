@@ -47,4 +47,9 @@
 		padding: 0 0 2rem;
 		width: 100%;
 	}
+
+	#load-more-button img {
+		width: 80%;
+		height: auto;
+	}
 }
