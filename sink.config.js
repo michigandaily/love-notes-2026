@@ -10,8 +10,8 @@ export default defineConfig({
 		},
 		{
 			type: 'sheet',
-			id: '11IcCL1XczOZ4WemixtNvGUEH9jClh_3qoEXy3b51ThM',
-			sheetId: '1241751428',
+			id: '1cySYT_FHwaJsiKfyX1pHcK9vLOL8u3TvzbpEVifRxhc',
+			sheetId: '1850985461',
 			output: 'src/data/data.json',
 			auth: '~/.daily-google-services.json'
 		},

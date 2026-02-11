@@ -2,8 +2,8 @@
 .letter-with-arrows {
     display: flex;
     flex-direction: column;
-    margin-top: 10vh;
-    min-height: 75vh; /* reserve space so arrow advance doesn't shift layout */
+    margin-top: 8vh;
+    min-height: 60vh;
     align-items: center;
     justify-content: flex-start;
 }
@@ -75,9 +75,9 @@
 
 // part of the Article component
 .postcard {
-    width: 35vw;
-    height: calc(35vw * 1.1);
-    min-height: 320px;
+    width: 28vw;
+    height: calc(28vw * 1.1);
+    min-height: 280px;
     margin: 0 2vw;
     padding: 1.25rem;
     box-sizing: border-box;
@@ -139,17 +139,16 @@
 
 @media screen and (max-width: 768px) {
     .letter-with-arrows {
-        margin-top: 80px;
-        /* fixed px height so mobile layout doesn't shift when URL bar or content changes */
-        min-height: 520px;
+        margin-top: 60px;
+        min-height: 440px;
         height: auto;
     }
 
     .postcard {
-        width: 90vw;
-        max-width: 400px;
-        height: 420px;
-        min-height: 420px;
+        width: 80vw;
+        max-width: 320px;
+        height: 360px;
+        min-height: 360px;
         padding: 1rem;
         box-sizing: border-box;
     }

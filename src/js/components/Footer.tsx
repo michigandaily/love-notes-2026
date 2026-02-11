@@ -16,7 +16,7 @@ const Footer = () => {
 						Ye
 					</p>
 					<p>
-						<strong>Developed By:</strong> Grace Liu, Matthew Prock, Siya Vashi, and Daniel Liu
+						<strong>Developed By:</strong> Grace Liu, Matthew Prock, Siya Vashi,and Daniel Liu
 					</p>
 				</div>
 				<div className="social-icons">
