@@ -159,9 +159,9 @@
 
 @media (max-width: 600px) {
   .grid-item:nth-child(2n+1) .card-face.back {
-    background-image: url('../assets/love-note-back-design.svg');
+    background-image: url('https://www.michigandaily.com/wp-content/uploads/2026/02/love-note-back-design.png');
   }
   .grid-item:nth-child(2n) .card-face.back {
-    background-image: url('../assets/love-note-back.svg');
+    background-image: url('https://www.michigandaily.com/wp-content/uploads/2026/02/love-note-back.png');
   }
 }

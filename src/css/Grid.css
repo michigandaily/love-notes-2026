@@ -29,6 +29,11 @@
 	padding: 0;
 }
 
+#load-more-button img {
+	width: 60%;
+	height: auto;
+}
+
 #load-more-button:hover {
 	transform: scale(1.05);
 }

@@ -1,5 +1,4 @@
 import Notecard from './Notecard';
-import Button from '../../assets/button.svg';
 import '../../css/Grid.css';
 import messages from '../../data-1.json';
 import { useState } from 'react';
@@ -47,7 +46,10 @@ const Grid: React.FC = () => {
 		<div className="grid-container">
 			<div className="grid">{renderNotecards()}</div>
 			<button id="load-more-button" onClick={loadMoreNotes}>
-				<img src={Button} alt="Load More button" />
+				<img
+					src={'https://www.michigandaily.com/wp-content/uploads/2026/02/button.png'}
+					alt="Load More button"
+				/>
 			</button>
 		</div>
 	);
