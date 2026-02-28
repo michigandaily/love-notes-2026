@@ -1,7 +1,5 @@
 import '../../css/article.scss';
 import '../../css/main.scss';
-// import logoStamp from '../../assets/logo-stamp.png';
-// import letterPhoto from '../../assets/letter-photo.png';
 
 const Article = ({
 	title,

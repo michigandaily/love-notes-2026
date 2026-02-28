@@ -1,5 +1,4 @@
 import '../css/app.scss'; // Import the external CSS file
-import WordSearch from '../assets/word-search.svg';
 import ArticleGallery from './components/ArticleGallery';
 import ArticleBank from './components/ArticleBank';
 
@@ -61,13 +60,16 @@ const App = () => {
 
 	return (
 		<div className="header-container">
-			<div className='word-search' id="word-search">
-				<img src={WordSearch} alt='Michigan Daily word search'/>
-				<div className='article-bank'>
+			<div className="word-search" id="word-search">
+				<img
+					src={'https://www.michigandaily.com/wp-content/uploads/2026/02/word-search.png'}
+					alt="Michigan Daily word search"
+				/>
+				<div className="article-bank">
 					<ArticleBank articles={articles} index={index} />
 				</div>
 			</div>
-			<div className='articles'>
+			<div className="articles">
 				<ArticleGallery articles={articles} index={index} setIndex={setIndex} />
 			</div>
 		</div>

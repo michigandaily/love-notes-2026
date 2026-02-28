@@ -54,19 +54,19 @@
 }
 
 .card-face.front {
-  background-image: url('../assets/love-note-front.svg');
+  background-image: url('https://www.michigandaily.com/wp-content/uploads/2026/02/love-note-front.png');
   background-size: 90% auto;
   transform: rotateY(0deg);
 }
 
 .card-face.back {
-  background-image: url('../assets/love-note-back.svg');
+  background-image: url('https://www.michigandaily.com/wp-content/uploads/2026/02/love-note-back.png');
   transform: rotateY(180deg);
 }
 
 .grid-item:nth-child(4n+1) .card-face.back,
 .grid-item:nth-child(4n+4) .card-face.back {
-  background-image: url('../assets/love-note-back-design.svg');
+  background-image: url('https://www.michigandaily.com/wp-content/uploads/2026/02/love-note-back-design.png');
 }
 
 /* Letter / note text — lives outside 3D context so scroll works on mobile */
