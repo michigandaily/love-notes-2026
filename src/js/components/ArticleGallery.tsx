@@ -29,7 +29,7 @@ const ArticleGallery = ({ articles, index, setIndex }: ArticleListProps) => {
 						/>
 					</button>
 
-					<img src={progressBars[index]} alt="Heart progress bar" />
+					<img className="progress-bar" src={progressBars[index]} alt="Heart progress bar" />
 
 					{/* right arrow button */}
 					<button
